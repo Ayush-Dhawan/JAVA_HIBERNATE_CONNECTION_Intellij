@@ -8,7 +8,7 @@ public class Alien{
 
     @Id
     private int id;
-    private String name;
+    private AlienName name;
     private String color;
 
     @Override
@@ -24,10 +24,11 @@ public class Alien{
         this.id = id;
     }
 
-    public String getName() {
+    public AlienName getName() {
         return name;
     }
-    public void setName(String name) {
+
+    public void setName(AlienName name) {
         this.name = name;
     }
 
