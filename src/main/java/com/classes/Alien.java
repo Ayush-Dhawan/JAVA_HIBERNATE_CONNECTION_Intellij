@@ -11,6 +11,11 @@ public class Alien{
     private String name;
     private String color;
 
+    @Override
+    public String toString(){
+        return "Alien{" + "id=" + id + ", name=" + name + ", color=" + color + '}';
+    }
+
     public int getId() {
         return id;
     }
