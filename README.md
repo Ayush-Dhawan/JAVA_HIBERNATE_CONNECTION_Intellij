@@ -57,43 +57,43 @@ By default classes are not cached in secondary cache, we need to explicitly make
         @Cacheable
         @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
         public class Stud {
-    @Id
-    private int roll_no;
-    private String name;
-    private int marks;
-    @OneToMany(mappedBy = "stud")
-    private List<Laptop> laptops = new ArrayList<>(); // one student can own multiple laptops herepublic int getRoll_no() {
-        return roll_no;
-    }
-
-    public int getMarks() {
-        return marks;
-    }
-
-    public void setMarks(int marks) {
-        this.marks = marks;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Laptop> getLaptops() {
-        return laptops;
-    }
-
-    public void setLaptops(List<Laptop> laptops) {
-        this.laptops = laptops;
-    }
-
-    public void setRoll_no(int roll_no) {
-        this.roll_no = roll_no;
-    }
-}
+            @Id
+            private int roll_no;
+            private String name;
+            private int marks;
+            @OneToMany(mappedBy = "stud")
+            private List<Laptop> laptops = new ArrayList<>(); // one student can own multiple laptops herepublic int getRoll_no() {
+                return roll_no;
+            }
+        
+            public int getMarks() {
+                return marks;
+            }
+        
+            public void setMarks(int marks) {
+                this.marks = marks;
+            }
+        
+            public String getName() {
+                return name;
+            }
+        
+            public void setName(String name) {
+                this.name = name;
+            }
+        
+            public List<Laptop> getLaptops() {
+                return laptops;
+            }
+        
+            public void setLaptops(List<Laptop> laptops) {
+                this.laptops = laptops;
+            }
+        
+            public void setRoll_no(int roll_no) {
+                this.roll_no = roll_no;
+            }
+        }
 
         
 
