@@ -1,8 +1,9 @@
 package com.classes;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Id;
+//import jakarta.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Laptop {

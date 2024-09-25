@@ -23,22 +23,34 @@ public class Main {
         stud.setMarks(95);
         stud.setRoll_no(1);
 
-//        stud.setLaptops(Arrays.asList(lap, lap2));
+
+        stud.setLaptops(Arrays.asList(lap, lap2));
 
         // Set the student for each laptop
-        lap.setStud(stud);
-        lap2.setStud(stud);
+//        lap.setStuds(Arrays.asList(stud));
+//        lap2.setStuds(Arrays.asList(stud));
+
+        Stud stud1 = null;
 
         Configuration configuration = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Stud.class).addAnnotatedClass(Laptop.class);
 
         SessionFactory sf = configuration.buildSessionFactory();
-        Session session = sf.openSession();
-        Transaction tx = session.beginTransaction();
+        Session session1 = sf.openSession();
+        Session session2 = sf.openSession();
+        Transaction tx1 = session1.beginTransaction();
 
-        session.save(lap);
-        session.save(lap2);
-        session.save(stud);
 
-        tx.commit();
+        stud1 = (Stud)session1.get(Stud.class, 1);
+        tx1.commit();
+        session1.close();
+
+
+        Transaction tx2 = session2.beginTransaction();
+        stud1 = (Stud)session2.get(Stud.class, 1);
+        System.out.println(stud1);
+
+
+        tx2.commit();
+        session2.close();
     }
 }

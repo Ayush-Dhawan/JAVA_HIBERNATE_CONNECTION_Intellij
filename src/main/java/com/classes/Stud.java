@@ -1,14 +1,19 @@
 package com.classes;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Id;
+//import jakarta.persistence.OneToMany;
+//import jakarta.persistence.Table;
+
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="studs")
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Stud {
     @Id
     private int roll_no;
